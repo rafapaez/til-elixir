@@ -1,4 +1,4 @@
-defmodule TILEX.AnonFunc do
+defmodule TILEX.AnonFunctions do
   @moduledoc """
   Having fun with anonymous functions in Elixir.
   """
@@ -8,12 +8,16 @@ defmodule TILEX.AnonFunc do
 
   ## Examples
       iex> sum = fn(a, b) -> a + b end
-      iex> TILEX.AnonFunc.run_operation(2, 3, sum)
+      iex> TILEX.AnonFunctions.run_operation(2, 3, sum)
       5
 
       iex> mult = &(&1 * &2) # shorthand syntax
-      iex> TILEX.AnonFunc.run_operation(2, 3, mult)
+      iex> TILEX.AnonFunctions.run_operation(2, 3, mult)
       6
+
+      # using inline syntax and the erlang :math.pow function
+      iex> TILEX.AnonFunctions.run_operation(2, 3, &(:math.pow(&1, &2)))
+      8.0
   """
   def run_operation(a, b, operation) do
     operation.(a, b)
@@ -23,13 +27,13 @@ defmodule TILEX.AnonFunc do
   Can be split into multiple clauses using pattern matching.
 
   ## Examples
-      iex> TILEX.AnonFunc.run_transaction(100, 25, :deposit)
+      iex> TILEX.AnonFunctions.run_transaction(100, 25, :deposit)
       125
 
-      iex> TILEX.AnonFunc.run_transaction(100, 25, :withdrawal)
+      iex> TILEX.AnonFunctions.run_transaction(100, 25, :withdrawal)
       75
 
-      iex> TILEX.AnonFunc.run_transaction(100, 25, :nop)
+      iex> TILEX.AnonFunctions.run_transaction(100, 25, :nop)
       :wrong_operation
   """
   def run_transaction(a, b, operation) do
