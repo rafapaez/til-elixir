@@ -25,7 +25,8 @@ The lessons shared here cover the following Elixir and Functional Programming co
 * Mix
 * Processes and Concurrency
 * OTP
-* Metaprogramming
+* Meta-programming
+* Benchmarking
 
 
 ## Installation
