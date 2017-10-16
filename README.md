@@ -19,7 +19,8 @@ The lessons shared here cover the following Elixir and Functional Programming co
 * Enumerables and Streams
 * Recursion
 * Comprehensions
-* Protocols and Structs
+* Protocols
+* Structs
 * Polymorphism
 * Behaviours
 * Documentation
